@@ -10,9 +10,9 @@
  //显示模块 --- ESP8266
  //  VCC   --- 3V(3.3V)
  //  GND   --- G (GND)
- //  DIO   --- (GPIO4)
- //  SCLK  --- (GPIO5)
- //  RCLK  --- (GPIO3)
+ //  DIO   --- D2(GPIO4)
+ //  SCLK  --- D1(GPIO5)
+ //  RCLK  --- D9(GPIO3)
 
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>

@@ -17,6 +17,7 @@
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>
 #include <ESP8266HTTPClient.h>
+#include <Ticker.h>
 //---------------修改此处""内的信息--------------------
 const char* ssid     = "Akari";       //WiFi名
 const char* password = "uid751219";   //WiFi密码
@@ -24,6 +25,7 @@ String biliuid       = "751219";      //bilibili UID
 //----------------------------------------------------
 DynamicJsonDocument jsonBuffer(200);
 WiFiClient client;
+Ticker blinker;
 
 #define mySCLK 2         //设置数据输入时钟线
 #define myRCLK 3         //设置输出存储器锁存时钟线
@@ -164,14 +166,10 @@ void setup() //程序将从这里开始
     pinMode(SCLK, OUTPUT);
     pinMode(RCLK, OUTPUT);
     pinMode(DIO, OUTPUT);
-
+    blinker.attach_ms(5,LED_Display); //定时器中断
 }
 void loop()  //接着在这里循环
 {
-  for(unsigned int i = 65535; i > 0; i--)
-  {
-    LED_Display();
-  }
   if (WiFi.status() == WL_CONNECTED)
   {
     HTTPClient http;

@@ -6,3 +6,5 @@ use ESP8266 and 74HC595
 该版本固件已经测试，运行稳定。
 测试效果见bilibili主页动态小视频
 http://space.bilibili.com/751219/
+
+本版不再另出烧写教程，请参考：https://www.bilibili.com/video/av32002485

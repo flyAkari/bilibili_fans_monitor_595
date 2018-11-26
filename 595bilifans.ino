@@ -41,10 +41,10 @@ unsigned char LED_CA[] = {       //共阳七段数码管码表
   0xC7,0xA3,0xA7,0x91,0xE3,0x98,0xAF
  /*A=10,b=11,C=12,d=13,E=14,F=15,-=16,P=17,blank=18,H=19,L=20,o=21,c=22,y=23,u=24,q=25,r=26*/
 };
-unsigned char LED[8];       //LED显示内容缓存
-int SCLK = mySCLK;   //SH_CP, 上升沿时数据移位
-int RCLK = myRCLK;   //ST_CP, 上升沿时数据锁存
-int DIO = myDIO;     //DS, 串行数据输入端
+unsigned char LED[8];   //LED显示内容缓存
+int SCLK = mySCLK;      //SH_CP, 上升沿时数据移位
+int RCLK = myRCLK;      //ST_CP, 上升沿时数据锁存
+int DIO = myDIO;        //DS, 串行数据输入端
 
 void DisplayError()
 {
@@ -193,7 +193,7 @@ void loop()  //接着在这里循环
       long fans = root["data"]["follower"];
       Serial.println(fans);
       displayNumber(fans);
-      delay(1000);
+      delay(1000);        //每1秒检查一次粉丝数
     }
   }
 }
